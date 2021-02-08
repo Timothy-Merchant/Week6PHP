@@ -58,10 +58,14 @@ $name = "Ben";
 // ^will change value of $name
 $notUseful = $age + $houseNumber;
 
+// Unassigned variables are set to null by default
+
 // SCALAR types, numbers, strings, booleans, represent a SINGLE VALUE
 
 dump(12 + 12); // 24
 dump(0.1 + 0.2); // 0.3 - hurrah! unlike JS's 0.30000000000000004
+floor((0.1 + 0.7) * 10); //ends up equalling 7 when it should be 8.
+// becomes 0.799999999 * 10 = 7.99999, floored = 7
 
 
 // MATH FUNCTIONS
