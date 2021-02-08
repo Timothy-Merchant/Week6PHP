@@ -16,7 +16,7 @@ require __DIR__ . "/vendor/autoload.php";
 function largest($values)
 {
     $numbers = collect($values);
-    return $result = $numbers->reduce(fn ($acc, $value) => $value > $acc ? $acc = $value : $acc, $values[0]);
+    return $numbers->reduce(fn ($acc, $value) => $value > $acc ? $acc = $value : $acc, $values[0]);
 }
 
 dump(
