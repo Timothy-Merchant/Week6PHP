@@ -18,8 +18,7 @@ require __DIR__ . "/vendor/autoload.php";
 // Collect method
 function sumBoth($array1, $array2)
 {
-    $both = collect(array_merge($array1, $array2));
-    return $result = $both->reduce(fn ($acc, $value) => $acc += $value);
+    return collect(array_merge($array1, $array2))->reduce(fn ($acc, $value) => $acc += $value);
 }
 
 dump(
