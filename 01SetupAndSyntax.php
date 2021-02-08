@@ -136,6 +136,11 @@ $add = function ($a, $b) {
 $result = $add(1, 2);
 dump($result); // 3
 
+$x = 3;
+// FAT ARROW anonymous function
+$result = array_reduce([1, 2, 3, 4, 5], fn ($a, $b) => $a + $b + $x);
+// Gives access to variables outside the function scope
+
 // Functions don't have access to variables outside themselves
 // In order to use these you need to use the 'USE' keyword:
 
