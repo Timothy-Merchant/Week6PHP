@@ -2,3 +2,4 @@
 
 // Autoloading
 
+$app 
