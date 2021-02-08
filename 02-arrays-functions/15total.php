@@ -15,8 +15,7 @@ require __DIR__ . "/vendor/autoload.php";
 // Collect version
 function total($items)
 {
-    $shoppingBasket = collect($items);
-    return $result = $shoppingBasket->reduce(fn ($total, $item) => $total += $item["price"], 0);
+    return collect($items)->reduce(fn ($total, $item) => $total += $item["price"], 0);    
 }
 
 
