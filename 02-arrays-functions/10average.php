@@ -19,7 +19,7 @@ function average($values)
 {    
     $numbers = collect($values);
     $total = $numbers->reduce(fn ($acc, $val) => $acc + $val, 0);
-    return $total / count($values);
+    return $total / $numbers->count();
 }
 
 dump(
