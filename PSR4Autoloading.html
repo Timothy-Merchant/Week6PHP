@@ -1,0 +1,41 @@
+<!-- 
+8.3 PSR-4 Autoloading
+
+The PSR-4 autoloading spec basically ties namespaces to a directory structure within
+a specified directory. Composer can do all the work of autoloading for us, but we
+do need to set it up.
+First, create a directory called app. Then edit the composer.json so that it looks
+like this:
+
+{
+        "require": {
+        "symfony/var-dumper": "^5.1"
+    },
+        "autoload": {
+        "psr-4": {"App\\": "app/"}
+    }
+}
+
+Here we’ve told Composer that any namespace starting with the root App should
+Your require section might look somewhat different
+
+look for files in the app directory. We could use anything as the root namespace
+or directory name, but this is the convention.
+Next, run composer dump: this regenerates the Composer autoload file for us2.
+Now, as long as we stick to the following rules, we won’t need to require any other
+files manually:
+
+1. One class per file, where the file name is the same as the class name (case
+sensitive)
+2. Put all of our classes in the App root namespace
+3. If we add directories inside the app directory (for extra organisation), they
+add an extra level to the namespace
+
+Because namespaces and classes in PHP are usually capitalised and, with PSR-4,
+the directory and filenames match the namespace/class naming, all the files and
+directories inside app will also be capitalised.
+For example, if we had a class called Post that just sat inside the app directory, it
+should be in a file called Post.php and have the namespace App\Post. If we had
+a class Post that did something with Slack we could create a directory app/Slack
+and then put the file Post.php in it with the namespace App\Slack\Post.
+ -->
