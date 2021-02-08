@@ -16,8 +16,7 @@ require __DIR__ . "/vendor/autoload.php";
 function timesBy($values, $multiplier)
 {
     $numbers = collect($values);
-    $result = $numbers->map(fn ($value) => $value * $multiplier)->all();
-    return $result;
+    return $numbers->map(fn ($value) => $value * $multiplier)->all();
 }
 
 dump(
