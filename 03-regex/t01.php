@@ -4,9 +4,8 @@ require __DIR__ . "/vendor/autoload.php";
 
 function validEmail($email)
 {
-    $trimmedEmail = preg_replace("/(^\s+)|(\s+$)/", "", $email);
-    dump($trimmedEmail);
-    return preg_match('/[a-z0-9_-]+\@[a-z0-9_-]+\.[a-z0-9_-]+/i', $trimmedEmail) === 1;
+    $trimmedEmail = preg_replace("/(^\s+)|(\s+$)/", "", $email);    
+    return filter_var($trimmedEmail, FILTER_VALIDATE_EMAIL) === $trimmedEmail;
 }
 
 dump(validEmail(" blahf   ")); // false
