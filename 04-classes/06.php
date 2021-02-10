@@ -11,7 +11,7 @@ class Validator
 
     public function postcode($postcode)
     {
-        return preg_match('/^[a-z]{1}[a-z0-9]{2,3}\s[a-z0-9]{3}$/i', $postcode) === 1;
+        return preg_match('/^[a-z]{1}[a-z0-9]{2,3} [a-z0-9]{3}$/i', $postcode) === 1;
     }
 }
 

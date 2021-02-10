@@ -21,7 +21,7 @@ class Stringy
     }
     public function append($stringToAppend)
     {
-        return implode("", [$this->userString, $stringToAppend]);
+        return $this->userString . $stringToAppend;
     }
     public function repeat($numberToRepeat)
     {
