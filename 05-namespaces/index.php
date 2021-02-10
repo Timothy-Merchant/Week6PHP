@@ -2,6 +2,7 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+
 echo "\nQuestion 1:\n";
 
 use App\Hello;
@@ -10,6 +11,7 @@ $sayHi = new Hello();
 
 dump($sayHi->hello("Orb")); // "Hello Orb"
 dump($sayHi->hello("Horse")); // "Hello Horse"
+
 
 echo "\nQuestion 2:\n";
 
@@ -31,3 +33,34 @@ dump($potato->hasGrown()); // true
 $potato->water(); // 6 water
 $potato->water(); // 7 water
 dump($potato->hasGrown()); // true
+
+
+echo "\nQuestion 3:\n";
+
+use App\Library\Book;
+
+$book = new Book("Zero: The Biography of a Dangerous Idea", 256);
+
+// read 12 pages
+$book->read(12);
+dump($book->currentPage()); // 13 - start on page 1
+
+// read another 25 pages
+$book->read(25);
+dump($book->currentPage()); // 38
+
+
+echo "\nQuestion 4:\n";
+
+use App\Shopping\BasketItem;
+
+$item = new BasketItem("coffee", 3.50);
+
+// get the type
+dump($item->type()); // "coffee"
+
+// get the price as a number
+dump($item->price()); // 3.5
+
+// get the price as a formatted string
+dump($item->priceFormatted()); // "£3.50"
