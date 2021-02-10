@@ -64,3 +64,18 @@ dump($item->price()); // 3.5
 
 // get the price as a formatted string
 dump($item->priceFormatted()); // "£3.50"
+
+
+echo "\nQuestion 5:\n";
+
+use App\Cooking\Ingredient;
+
+// ingredients take a name, followed by an array of dietary information
+$flour = new Ingredient("Flour", ["gluten"]);
+$eggs = new Ingredient("Eggs", ["animal produce"]);
+
+dump($flour->name()); // "Flour"
+dump($flour->vegan()); // true
+
+dump($eggs->name()); // "Eggs"
+dump($eggs->vegan()); // false
