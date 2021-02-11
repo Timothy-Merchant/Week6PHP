@@ -1,15 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 require __DIR__ . "/vendor/autoload.php";
 
 class Validator
 {
-    public function email($email)
+    public function email(string $email): bool
     {
         return filter_var($email, FILTER_VALIDATE_EMAIL) === $email;
     }
 
-    public function postcode($postcode)
+    public function postcode(string $postcode): bool
     {
         return preg_match('/^[a-z]{1}[a-z0-9]{2,3} [a-z0-9]{3}$/i', $postcode) === 1;
     }

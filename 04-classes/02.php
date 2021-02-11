@@ -1,22 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 require __DIR__ . "/vendor/autoload.php";
 
 class LightSwitch
 {
     private $state = false;
 
-    public function isOn() : bool
+    public function isOn(): bool
     {
         return $this->state;
     }
 
-    public function turnOn()
+    public function turnOn(): void
     {
         $this->state = true;
     }
 
-    public function turnOff()
+    public function turnOff(): void
     {
         $this->state = false;
     }

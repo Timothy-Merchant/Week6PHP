@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 require __DIR__ . "/vendor/autoload.php";
 
 class Address
@@ -14,15 +16,15 @@ class Address
         $this->postCode = $postCode;
         $this->town = $town;
     }
-    public function setStreet(string $street)
+    public function setStreet(string $street): void
     {
         $this->street = $street;
     }
-    public function setPostcode(string $postCode)
+    public function setPostcode(string $postCode): void
     {
         $this->postCode = $postCode;
     }
-    public function setTown(string $town)
+    public function setTown(string $town): void
     {
         $this->town = $town;
     }
