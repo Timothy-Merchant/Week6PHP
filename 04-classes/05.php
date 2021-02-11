@@ -15,17 +15,21 @@ class Stringy
     {
         return strtolower($this->userString);
     }
+
     public function upper()
     {
         return strtoupper($this->userString);
     }
+
     public function append($stringToAppend)
     {
         return $this->userString . $stringToAppend;
+        // return implode("", [$this->userString, $stringToAppend]);
     }
-    public function repeat($numberToRepeat)
+
+    public function repeat($total)
     {
-        return str_repeat($this->userString, $numberToRepeat);
+        return str_repeat($this->userString, $total);
     }
 }
 
