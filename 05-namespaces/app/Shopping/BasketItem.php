@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Shopping;
 
 class BasketItem
@@ -8,23 +10,23 @@ class BasketItem
     private $price;
     private $priceString;
 
-    public function __construct($type, $price)
+    public function __construct(string $type, float $price)
     {
         $this->type = $type;
         $this->price = $price;
     }
 
-    public function type()
+    public function type(): string
     {
         return $this->type;
     }
 
-    public function price()
+    public function price(): float
     {
         return $this->price;
     }
 
-    public function priceFormatted()
+    public function priceFormatted(): string
     {
         return "£" . number_format($this->price, 2, '.', ',');
     }

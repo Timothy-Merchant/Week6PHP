@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Library;
 
 class Book
@@ -9,18 +11,18 @@ class Book
     private $pages;
     private $pagesRead = 1;
 
-    public function __construct($title, $pages)
+    public function __construct(string $title, int $pages)
     {
         $this->title = $title;
         $this->pages = $pages;
     }
 
-    public function read($pagesRead)
+    public function read(int $pagesRead): void
     {
         $this->pagesRead += $pagesRead;
     }
 
-    public function currentPage()
+    public function currentPage(): int
     {
         return $this->pagesRead;
     }

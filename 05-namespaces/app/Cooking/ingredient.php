@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Cooking;
 
 class Ingredient
@@ -10,17 +12,16 @@ class Ingredient
     public function __construct($name, $dietryInfo)
     {
         $this->name = $name;
-        $this->dietryInfo = $dietryInfo;
+        $this->dietryInfo = collect($dietryInfo);
     }
 
-    public function name()
+    public function name(): string
     {
         return $this->name;
     }
 
-    public function vegan()
+    public function vegan(): bool
     {
-        $nonVeganArray = collect($this->dietryInfo)->filter(fn ($item) => preg_match('/animal produce/', $item) === 1)->all();
-        return count($nonVeganArray) > 0 ? 'Not vegan friendly.' : 'Vegan friendly.';
+        return !$this->dietryInfo->contains("animal produce");
     }
 }
